@@ -40,74 +40,74 @@ create_project_organization <-
     current_wd <-
       getwd()
     ####code
-    dir.create(file.path(current_wd, "1-code"),
+    dir.create(file.path(current_wd, "1_code"),
                showWarnings = FALSE,
                recursive = TRUE)
 
-    if (!file.exists(file.path(current_wd, "1-code/100-tools.R"))) {
-      file.create(file.path(current_wd, "1-code/100-tools.R"),
+    if (!file.exists(file.path(current_wd, "1_code/100_tools.R"))) {
+      file.create(file.path(current_wd, "1_code/100_tools.R"),
                   showWarnings = FALSE)
       writeLines(
         "library(tidyverse)\nlibrary(ggplot2)",
-        file.path(current_wd, "1-code/100-tools.R")
+        file.path(current_wd, "1_code/100_tools.R")
       )
     } else {
-      warning("'1-code/100-tools.R' already exists. Not overwriting.\n")
+      warning("'1_code/100_tools.R' already exists. Not overwriting.\n")
     }
 
-    file.create(file.path(current_wd, "1-code/101-demo_code.R"),
+    file.create(file.path(current_wd, "1_code/101_demo_code.R"),
                 showWarnings = FALSE)
 
     writeLines(
-      "library(r4projects)\nsetwd(get_project_wd())\nrm(list = ls())\nsource('1-code/100-tools.R')",
-      file.path(current_wd, "1-code/101-demo_code.R")
+      "library(r4projects)\nsetwd(get_project_wd())\nrm(list = ls())\nsource('1_code/100_tools.R')",
+      file.path(current_wd, "1_code/101_demo_code.R")
     )
 
     #####data
-    dir.create(file.path(current_wd, "2-data"),
+    dir.create(file.path(current_wd, "2_data"),
                showWarnings = FALSE,
                recursive = TRUE)
 
     ###data_analysis
     dir.create(
-      file.path(current_wd, "3-data_analysis"),
+      file.path(current_wd, "3_data_analysis"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     ###manuscript
     dir.create(
-      file.path(current_wd, "4-manuscript"),
+      file.path(current_wd, "4_manuscript"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     dir.create(
-      file.path(current_wd, "4-manuscript/Figures"),
+      file.path(current_wd, "4_manuscript/Figures"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     dir.create(
-      file.path(current_wd, "4-manuscript/Supplementary_data"),
+      file.path(current_wd, "4_manuscript/Supplementary_data"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     dir.create(
-      file.path(current_wd, "4-manuscript/Supplementary_figures"),
+      file.path(current_wd, "4_manuscript/Supplementary_figures"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     ###summary
     dir.create(
-      file.path(current_wd, "5-summary"),
+      file.path(current_wd, "5_summary"),
       showWarnings = FALSE,
       recursive = TRUE
     )
 
     download.file(url = "https://jaspershen.github.io/file/demo_summary.pptx",
-                  destfile = file.path(current_wd, "5-summary/demo_summary.pptx"))
+                  destfile = file.path(current_wd, "5_summary/demo_summary.pptx"))
 
   }

@@ -13,3 +13,7 @@
 # r4projects 0.1.3
 
 * Add function color_palette
+
+# r4projects 0.1.4
+
+* Make all file name lowercase
