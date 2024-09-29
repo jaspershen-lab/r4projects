@@ -1,8 +1,8 @@
 Package: r4projects
 Type: Package
 Title: R for bioinformatics project organization
-Version: 0.1.4
-Date: 2024-08-01
+Version: 0.1.5
+Date: 2024-09-29
 Author: c(
     person(given = "Xiaotao",
            family = "Shen",

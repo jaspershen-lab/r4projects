@@ -39,6 +39,29 @@ create_project_organization <-
   function() {
     current_wd <-
       getwd()
+
+    ####add gitignore file
+    if (!file.exists(file.path(".", ".gitignore"))) {
+      file.create(file.path(".", ".gitignore"), showWarnings = FALSE)
+    }
+
+    if (!file.exists(file.path(".", ".gitignore"))) {
+      new_lines <- c(
+        "2_data",
+        "2_data/",
+        "3_data_analysis",
+        "3_data_analysis/",
+        "4_manuscript",
+        "4_manuscript/",
+        "5_summary",
+        "5_summary/"
+      )
+      write(new_lines,
+            file = ".gitignore",
+            append = TRUE,
+            sep = "\n")
+    }
+
     ####code
     dir.create(file.path(current_wd, "1_code"),
                showWarnings = FALSE,

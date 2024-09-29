@@ -17,3 +17,7 @@
 # r4projects 0.1.4
 
 * Make all file name lowercase
+
+# r4projects 0.1.5
+
+* Add something to .gitignore
