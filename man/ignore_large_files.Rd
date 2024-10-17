@@ -4,7 +4,7 @@
 \alias{ignore_large_files}
 \title{Add Large Files to .gitignore}
 \usage{
-ignore_large_files(path, size_limit = 200)
+ignore_large_files(path = ".", size_limit = 10)
 }
 \arguments{
 \item{path}{Character string specifying the path to the folder to be scanned.}

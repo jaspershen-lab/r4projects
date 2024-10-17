@@ -54,8 +54,7 @@ install_fastgit <-
 #'         or a message stating that no large files were found.
 #' @export
 ignore_large_files <-
-  function(path,
-           size_limit = 200) {
+  function(path = ".", size_limit = 10) {
     # List all files in the folder recursively
     all_files <-
       list.files(path, recursive = TRUE, full.names = TRUE)
