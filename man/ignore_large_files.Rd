@@ -2,22 +2,32 @@
 % Please edit documentation in R/9-git.R
 \name{ignore_large_files}
 \alias{ignore_large_files}
-\title{Add Large Files to .gitignore}
+\title{Ignore Large Files in a Project}
 \usage{
 ignore_large_files(path = ".", size_limit = 10)
 }
 \arguments{
-\item{path}{Character string specifying the path to the folder to be scanned.}
+\item{path}{Character. The path to the directory to search for large files. Defaults to the current directory (`"."`).}
 
-\item{size_limit}{Numeric value indicating the size limit in megabytes (MB).
-Files larger than this limit will be added to '.gitignore'. Default is 200 MB.}
+\item{size_limit}{Numeric. The size limit in megabytes (MB) above which files will be ignored. Defaults to 10 MB.}
 }
 \value{
-A message indicating the number of large files added to '.gitignore',
-        or a message stating that no large files were found.
+None. The function is used for its side effects of modifying the `.gitignore` file and printing messages to the console.
 }
 \description{
-This function scans a specified folder for files larger than a given size limit
-and appends their paths to the '.gitignore' file to prevent them from being
-committed to a Git repository.
+This function identifies large files in a given directory and appends them to the `.gitignore` file.
+}
+\details{
+The function searches for files in the specified directory and its subdirectories, calculates their sizes, and adds files larger than `size_limit` to the `.gitignore` file. It ensures that the function is run from the project root directory by comparing the current working directory with the project root.
+}
+\examples{
+\dontrun{
+# Ignore all files larger than 10 MB in the current directory
+ignore_large_files(path = ".", size_limit = 10)
+
+# Ignore all files larger than 5 MB in the "data" directory
+ignore_large_files(path = "data", size_limit = 5)
+}
+
+
 }

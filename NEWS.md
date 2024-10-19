@@ -21,3 +21,7 @@
 # r4projects 0.1.5
 
 * Add something to .gitignore
+
+# r4projects 0.1.6
+
+* Fixed one bug in ignore_large_files function.
