@@ -10,9 +10,9 @@ require_package_info(
 )
 }
 \arguments{
-\item{repo_name}{R package repo name, default is "jaspershen/laggedcor"}
+\item{repo_name}{R package repository name. Defaults to `"jaspershen/laggedcor"`.}
 
-\item{from}{github, gitlab or gitee.}
+\item{from}{One of `"github"`, `"gitlab"`, or `"gitee"`.}
 }
 \value{
 information

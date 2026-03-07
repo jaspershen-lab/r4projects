@@ -7,18 +7,17 @@
 craw_or_load_page(user_id = "3TK9yz8AAAAJ", force = FALSE, interval = 7)
 }
 \arguments{
-\item{user_id}{User google scholar ID}
+\item{user_id}{Google Scholar user ID.}
 
-\item{force}{Force read webpage?}
+\item{force}{Force a fresh webpage request?}
 
-\item{interval}{If there is old data on the local machine,
-do you want to use it and the interval (day)?}
+\item{interval}{Cache validity interval in days when local data already exist.}
 }
 \value{
-page data
+Parsed page data.
 }
 \description{
-Craw or load webpage data.
+Crawl or load webpage data.
 }
 \author{
 Xiaotao Shen

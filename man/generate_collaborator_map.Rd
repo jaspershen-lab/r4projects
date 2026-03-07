@@ -13,22 +13,21 @@ generate_collaborator_map(
 )
 }
 \arguments{
-\item{gs_user_id}{user google scholar ID}
+\item{gs_user_id}{Google Scholar user ID.}
 
-\item{force}{Force read webpage?}
+\item{force}{Force a fresh webpage request?}
 
-\item{interval}{If there is old data on the local machine,
-do you want to use it and the interval (day)?}
+\item{interval}{Cache validity interval in days when local data already exist.}
 
-\item{map_color}{color of map}
+\item{map_color}{Map fill color.}
 
-\item{point_color}{color of point}
+\item{point_color}{Point color.}
 }
 \value{
-Profile.
+A `ggplot2` object.
 }
 \description{
-Generate map of collaborators
+Generate a collaborator map.
 }
 \author{
 Xiaotao Shen

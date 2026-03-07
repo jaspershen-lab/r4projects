@@ -18,7 +18,7 @@ convert_gs_pub_id2pmid(
 
 \item{force}{Logical. Whether to force the request for publication info. Default is FALSE.}
 
-\item{interval}{Numeric. Time interval in seconds to wait between requests. Default is 7.}
+\item{interval}{Numeric. Cache validity interval in days. Default is 7.}
 }
 \value{
 A character string containing the PubMed ID (PMID) if found, or NA otherwise.

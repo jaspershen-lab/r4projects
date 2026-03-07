@@ -10,15 +10,15 @@ update_packages_tidymass_org(
 )
 }
 \arguments{
-\item{path_tidymass.org}{path_tidymass.org}
+\item{path_tidymass.org}{Path to the `tidymass-packages` directory.}
 
-\item{path_packages}{path_packages}
+\item{path_packages}{Path containing package source tarballs.}
 }
 \value{
-Profile.
+Invisibly updates package files in `path_tidymass.org`.
 }
 \description{
-Update packages in tidymass.org. Please set the path to "/Users/xiaotaoshen/tidymass" first.
+Update package files used by tidymass.org.
 }
 \author{
 Xiaotao Shen

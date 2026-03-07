@@ -7,10 +7,10 @@
 create_project_organization()
 }
 \value{
-some folders
+Creates a standard set of project folders and template files.
 }
 \description{
-Create project organization.
+Create a standard project directory structure.
 }
 \author{
 Xiaotao Shen

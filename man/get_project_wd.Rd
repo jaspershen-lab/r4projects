@@ -7,10 +7,10 @@
 get_project_wd()
 }
 \value{
-A working directory.
+A project working directory path.
 }
 \description{
-Get the working directory where Rproj object is in.
+Get the project working directory containing the `.Rproj` file.
 }
 \author{
 Xiaotao Shen

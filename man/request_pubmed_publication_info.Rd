@@ -7,13 +7,13 @@
 request_pubmed_publication_info(pmid = "35902589")
 }
 \arguments{
-\item{pmid}{pmid of paper}
+\item{pmid}{PubMed ID of the paper.}
 }
 \value{
-Information of publication
+A list of publication information.
 }
 \description{
-Request publication information from pubmed
+Request publication information from PubMed.
 }
 \author{
 Xiaotao Shen

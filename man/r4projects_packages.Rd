@@ -2,18 +2,18 @@
 % Please edit documentation in R/5-utils.R
 \name{r4projects_packages}
 \alias{r4projects_packages}
-\title{List all packages in the r4projects}
+\title{List Packages Used by r4projects}
 \usage{
 r4projects_packages(include_self = TRUE)
 }
 \arguments{
-\item{include_self}{Include r4projects in the list?}
+\item{include_self}{Include `r4projects` in the list?}
 }
 \value{
-r4projects packages
+A character vector of package names.
 }
 \description{
-List all packages in the r4projects
+List Packages Used by r4projects
 }
 \examples{
 r4projects_packages()

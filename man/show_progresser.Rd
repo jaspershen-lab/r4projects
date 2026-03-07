@@ -10,15 +10,15 @@ show_progresser(
 )
 }
 \arguments{
-\item{index}{index for loop}
+\item{index}{A numeric index vector.}
 
-\item{progresser}{progresser}
+\item{progresser}{Progress labels to map onto `index`.}
 }
 \value{
-A data.frame
+A data frame.
 }
 \description{
-show_progresser
+Create a simple progress lookup table.
 }
 \author{
 Xiaotao Shen

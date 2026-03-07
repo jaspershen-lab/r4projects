@@ -7,13 +7,13 @@
 require_github_contribution_activity(user_name = "jaspershen")
 }
 \arguments{
-\item{user_name}{GitHub user name}
+\item{user_name}{GitHub user name.}
 }
 \value{
-Profile.
+A list containing contribution data and a plot.
 }
 \description{
-Request the contribution activity of github
+Request GitHub contribution activity.
 }
 \author{
 Xiaotao Shen

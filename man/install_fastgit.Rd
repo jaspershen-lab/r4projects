@@ -9,16 +9,16 @@ install_fastgit(pkg, from = c("gitee", "gitlab", "github"), ...)
 install_fastgit(pkg, from = c("gitee", "gitlab", "github"), ...)
 }
 \arguments{
-\item{pkg}{pkg name from github, gitlab or gitee, "name/repo" format}
+\item{pkg}{Package name from GitHub, GitLab, or Gitee in `"name/repo"` format.}
 
-\item{from}{gitlab, github or gitee.}
+\item{from}{One of `"gitee"`, `"gitlab"`, or `"github"`.}
 
-\item{...}{Other parameters for install_git}
+\item{...}{Other parameters passed to `remotes::install_git()`.}
 }
 \description{
-install packages from fastgit. Credit to Shixiang Wang
+Install packages from FastGit. Credit to Shixiang Wang.
 
-install packages from fastgit. Credit to Shixiang Wang
+Install packages from FastGit. Credit to Shixiang Wang.
 }
 \author{
 Xiaotao Shen

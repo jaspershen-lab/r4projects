@@ -7,13 +7,13 @@
 require_github_profile(user_name = "jaspershen")
 }
 \arguments{
-\item{user_name}{GitHub user name}
+\item{user_name}{GitHub user name.}
 }
 \value{
-Profile.
+A list containing profile information.
 }
 \description{
-Request the profile of GitHub.
+Request a GitHub profile.
 }
 \author{
 Xiaotao Shen

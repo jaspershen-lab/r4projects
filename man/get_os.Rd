@@ -7,10 +7,10 @@
 get_os()
 }
 \value{
-os name
+OS name.
 }
 \description{
-get os information.
+Get operating system information.
 }
 \examples{
 get_os()
