@@ -4,26 +4,104 @@
 \alias{color_palette}
 \title{Generate Color Palettes}
 \usage{
-color_palette(palette_number)
+color_palette(palette = NULL, palette_number = NULL, show_all = FALSE)
 }
 \arguments{
-\item{palette_number}{An integer specifying the palette number between 2 and 9.}
+\item{palette}{Character. Name of the palette to return. Supported values are
+`"nature"`, `"science"`, `"cell"`, `"economist"`, `"bbc"`,
+`"nytimes"`, and `"legacy5"`.}
+
+\item{palette_number}{Integer. Legacy interface. Currently only `5` is
+supported and returns the original list of five-color palettes.}
+
+\item{show_all}{Logical. If `TRUE`, return all available palettes as a named
+list.}
 }
 \value{
-A list of color palettes. The selected palette is returned based on the
-        specified palette_number.
+If `palette` is provided, a character vector of hex colors.
+
+If `show_all = TRUE`, a named list of all palettes.
+
+If `palette_number = 5`, the original list of five-color palettes.
 }
 \description{
-This function generates color palettes for use in data visualization.
+`color_palette()` returns curated palettes for data visualization.
+It supports both the legacy numeric interface and a newer named interface
+for journal- and media-inspired palettes.
+}
+\details{
+The named palettes are intended for practical plotting rather than strict
+brand replication.
+
+\itemize{
+  \item `"nature"` is based on the well-known Nature Publishing Group style
+  palette commonly used in scientific figures.
+  \item `"science"` is based on the widely used AAAS/Science style palette.
+  \item `"cell"`, `"economist"`, `"bbc"`, and `"nytimes"` are editorial or
+  publication-inspired palettes curated for clear categorical contrast.
+  \item `palette_number = 5` preserves the original package behavior.
+}
 }
 \examples{
-# Generate a color palette with 5 colors
-my_palette <- color_palette(5)
+# New named interface
+color_palette("nature")
+color_palette("economist")
 
-# Display the first color palette
-my_palette[[1]]
+# Return all named palettes
+names(color_palette(show_all = TRUE))
 
-# Display the second color palette
-my_palette[[2]]
+# Legacy interface
+legacy_palettes <- color_palette(palette_number = 5)
+legacy_palettes[[1]]
+
+# Boxplot with a Nature-style palette
+library(ggplot2)
+pal <- color_palette("nature")
+ggplot(mtcars, aes(factor(cyl), mpg, fill = factor(cyl))) +
+  geom_boxplot() +
+  scale_fill_manual(values = pal[1:3]) +
+  labs(
+    title = "Nature-style palette",
+    x = "Cylinders",
+    y = "Miles per gallon",
+    fill = "Cylinders"
+  ) +
+  theme_shenlab()
+
+# Scatter plot with an Economist-inspired palette
+pal <- color_palette("economist")
+ggplot(mtcars, aes(mpg, wt, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.9) +
+  scale_color_manual(values = pal[1:3]) +
+  labs(
+    title = "Economist-inspired palette",
+    x = "Miles per gallon",
+    y = "Weight",
+    color = "Cylinders"
+  ) +
+  theme_shenlab()
+
+# Palette preview
+palettes <- color_palette(show_all = TRUE)
+pal <- palettes$bbc
+df <- data.frame(
+  x = seq_along(pal),
+  y = 1,
+  fill = pal
+)
+ggplot(df, aes(x, y, fill = fill)) +
+  geom_tile() +
+  scale_fill_identity() +
+  scale_x_continuous(breaks = df$x, labels = pal) +
+  labs(
+    title = "BBC-inspired palette preview",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_shenlab() +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank()
+  )
 
 }

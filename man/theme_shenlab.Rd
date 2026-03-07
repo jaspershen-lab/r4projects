@@ -4,28 +4,46 @@
 \alias{theme_shenlab}
 \title{Shen Lab Custom ggplot2 Theme}
 \usage{
-theme_shenlab(base_size = 12)
+theme_shenlab(base_size = 12, base_family = "", accent = "#1F4E79")
 }
 \arguments{
-\item{base_size}{Numeric. Base font size for text elements (default = 12).}
+\item{base_size}{Numeric. Base font size for text elements.}
+
+\item{base_family}{Character. Base font family passed to \code{theme_bw()}.}
+
+\item{accent}{Character. Accent color used for titles and strip styling.}
 }
 \value{
 A \code{\link[ggplot2]{theme}} object that can be added to ggplot2 plots.
 }
 \description{
-A simple custom ggplot2 theme based on \code{\link[ggplot2]{theme_bw}}
-with minor grid lines removed and axis text sizes adjusted.
+A more polished ggplot2 theme built on \code{\link[ggplot2]{theme_bw}}.
+It keeps the clean white background of \code{theme_bw()} while adding
+stronger hierarchy for titles, axes, legends, facet strips, and panel
+spacing.
 }
 \details{
 This theme builds on \code{\link[ggplot2]{theme_bw}} and customizes:
 \itemize{
-  \item Removes minor grid lines.
-  \item Sets axis titles and axis text to \code{base_size}.
+  \item plot title, subtitle, caption, and tag styling;
+  \item axis text, axis ticks, and axis title emphasis;
+  \item major grid lines while removing minor grid lines;
+  \item legend placement and legend key cleanup;
+  \item facet strip backgrounds and text hierarchy;
+  \item panel borders, plot margins, and spacing.
 }
 }
 \examples{
 library(ggplot2)
-p <- ggplot(mtcars, aes(mpg, wt)) + geom_point()
+p <- ggplot(mtcars, aes(mpg, wt, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.9) +
+  labs(
+    title = "Example scatter plot",
+    subtitle = "theme_shenlab() on top of theme_bw()",
+    x = "Miles per gallon",
+    y = "Weight",
+    color = "Cylinders"
+  )
 p + theme_shenlab()
 
 }

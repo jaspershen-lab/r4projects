@@ -1,52 +1,120 @@
 #' Generate Color Palettes
 #'
-#' This function generates color palettes for use in data visualization.
+#' `color_palette()` returns curated palettes for data visualization.
+#' It supports both the legacy numeric interface and a newer named interface
+#' for journal- and media-inspired palettes.
 #'
-#' @param palette_number An integer specifying the palette number between 2 and 9.
+#' @param palette Character. Name of the palette to return. Supported values are
+#'   `"nature"`, `"science"`, `"cell"`, `"economist"`, `"bbc"`,
+#'   `"nytimes"`, and `"legacy5"`.
+#' @param palette_number Integer. Legacy interface. Currently only `5` is
+#'   supported and returns the original list of five-color palettes.
+#' @param show_all Logical. If `TRUE`, return all available palettes as a named
+#'   list.
 #'
-#' @return A list of color palettes. The selected palette is returned based on the
-#'         specified palette_number.
+#' @details
+#' The named palettes are intended for practical plotting rather than strict
+#' brand replication.
+#'
+#' \itemize{
+#'   \item `"nature"` is based on the well-known Nature Publishing Group style
+#'   palette commonly used in scientific figures.
+#'   \item `"science"` is based on the widely used AAAS/Science style palette.
+#'   \item `"cell"`, `"economist"`, `"bbc"`, and `"nytimes"` are editorial or
+#'   publication-inspired palettes curated for clear categorical contrast.
+#'   \item `palette_number = 5` preserves the original package behavior.
+#' }
+#'
+#' @return
+#' If `palette` is provided, a character vector of hex colors.
+#'
+#' If `show_all = TRUE`, a named list of all palettes.
+#'
+#' If `palette_number = 5`, the original list of five-color palettes.
 #'
 #' @examples
-#' # Generate a color palette with 5 colors
-#' my_palette <- color_palette(5)
+#' # New named interface
+#' color_palette("nature")
+#' color_palette("economist")
 #'
-#' # Display the first color palette
-#' my_palette[[1]]
+#' # Return all named palettes
+#' names(color_palette(show_all = TRUE))
 #'
-#' # Display the second color palette
-#' my_palette[[2]]
+#' # Legacy interface
+#' legacy_palettes <- color_palette(palette_number = 5)
+#' legacy_palettes[[1]]
+#'
+#' # Boxplot with a Nature-style palette
+#' library(ggplot2)
+#' pal <- color_palette("nature")
+#' ggplot(mtcars, aes(factor(cyl), mpg, fill = factor(cyl))) +
+#'   geom_boxplot() +
+#'   scale_fill_manual(values = pal[1:3]) +
+#'   labs(
+#'     title = "Nature-style palette",
+#'     x = "Cylinders",
+#'     y = "Miles per gallon",
+#'     fill = "Cylinders"
+#'   ) +
+#'   theme_shenlab()
+#'
+#' # Scatter plot with an Economist-inspired palette
+#' pal <- color_palette("economist")
+#' ggplot(mtcars, aes(mpg, wt, color = factor(cyl))) +
+#'   geom_point(size = 3, alpha = 0.9) +
+#'   scale_color_manual(values = pal[1:3]) +
+#'   labs(
+#'     title = "Economist-inspired palette",
+#'     x = "Miles per gallon",
+#'     y = "Weight",
+#'     color = "Cylinders"
+#'   ) +
+#'   theme_shenlab()
+#'
+#' # Palette preview
+#' palettes <- color_palette(show_all = TRUE)
+#' pal <- palettes$bbc
+#' df <- data.frame(
+#'   x = seq_along(pal),
+#'   y = 1,
+#'   fill = pal
+#' )
+#' ggplot(df, aes(x, y, fill = fill)) +
+#'   geom_tile() +
+#'   scale_fill_identity() +
+#'   scale_x_continuous(breaks = df$x, labels = pal) +
+#'   labs(
+#'     title = "BBC-inspired palette preview",
+#'     x = NULL,
+#'     y = NULL
+#'   ) +
+#'   theme_shenlab() +
+#'   theme(
+#'     axis.text.y = element_blank(),
+#'     axis.ticks = element_blank()
+#'   )
 #'
 #' @export
-
 color_palette <-
-  function(palette_number) {
-    if(missing(palette_number)){
-     stop("You must specify a palette number between 2 and 9")
-    }
-    color_palette5 <-
+  function(palette = NULL,
+           palette_number = NULL,
+           show_all = FALSE) {
+    legacy5 <-
       list(
         c("#2C3E50", "#E74C3C", "#ECF0F1", "#3498DB", "#2980B9"),
-        c(
-          "#E67E22",
-          "#F1C40F",
-          "#F3FFE2",
-          "#ACF0F2",
-          "#1695A3",
-          "#225378"
-        ),
+        c("#E67E22", "#F1C40F", "#F3FFE2", "#ACF0F2", "#1695A3", "#225378"),
         c("#002F2F", "#046380", "#EFECCA", "#A7A37E", "#E6E2AF"),
         c("#E28B00", "#B64926", "#FFB03B", "#FFD34E", "#468966"),
         c("#FF6138", "#FFFF9D", "#BEEB9F", "#79BD8F", "#00A388"),
-        c('#D9ECF2', '#F56A79', '#FF414D', '#1AA687', '#002D40'),
-        c('#5AA7A7', '#96D7C6', '#8AC94A', '#E2D368', '#6C8CBF'),
-        c('#147C72', '#299D90', '#30C3B1', '#8FE4DC', '#B4F0E8'),
-        c('#ED4557', '#B8010B', '#D9569E', '#381B2A', '#FCBC53'),
-        c('#93C6BD', '#C1E1DA', '#DBE1EA', '#F2C29F', '#E9A475'),
-        c('#86CBCD', '#A8DFE0', '#F9E2AE', '#FBC78D', '#A6D676'),
+        c("#D9ECF2", "#F56A79", "#FF414D", "#1AA687", "#002D40"),
+        c("#5AA7A7", "#96D7C6", "#8AC94A", "#E2D368", "#6C8CBF"),
+        c("#147C72", "#299D90", "#30C3B1", "#8FE4DC", "#B4F0E8"),
+        c("#ED4557", "#B8010B", "#D9569E", "#381B2A", "#FCBC53"),
+        c("#93C6BD", "#C1E1DA", "#DBE1EA", "#F2C29F", "#E9A475"),
+        c("#86CBCD", "#A8DFE0", "#F9E2AE", "#FBC78D", "#A6D676"),
         c("#8969A5", "#C48ADE", "#B1BEEA", "#8FC4E9", "#8095CF"),
         c("#FD465D", "#FEB396", "#FECCBF", "#AED4D5", "#F8CC88"),
-        c("#86E3CE", "#DOE6A5", "#FFDD95", "#FD9385", "#CCABDA"),
+        c("#86E3CE", "#D0E6A5", "#FFDD95", "#FD9385", "#CCABDA"),
         c("#348899", "#F2EBC7", "#979C9C", "#343642", "#FE8B54"),
         c("#F95759", "#FDA099", "#FFFFFF", "#D9F3CB", "#8AC2B0"),
         c("#0A3D64", "#DDB0A7", "#EAAD5A", "#A8B293", "#DF8053"),
@@ -60,7 +128,37 @@ color_palette <-
         c("#CAD4BD", "#ACC352", "#8ED4C5", "#FFF16F", "#FFA68D"),
         c("#8F797E", "#FFC2B5", "#FFE3CC", "#646C8F", "#DCC3A1")
       )
-    if(palette_number == 5){
-      return(color_palette5)
+
+    named_palettes <-
+      list(
+        nature = c("#E64B35", "#4DBBD5", "#00A087", "#3C5488", "#F39B7F", "#8491B4"),
+        science = c("#3B4992", "#EE0000", "#008B45", "#631879", "#008280", "#BB0021"),
+        cell = c("#005587", "#1F78B4", "#4DB6E2", "#00A087", "#F4A259", "#D1495B"),
+        economist = c("#E3120B", "#006BA2", "#3EBCD2", "#379A8B", "#EAC435", "#8E6C8A"),
+        bbc = c("#B80000", "#0051AD", "#00843D", "#FFB300", "#2E2E2E", "#8C8C8C"),
+        nytimes = c("#1A1A1A", "#666666", "#B3B3B3", "#D9D9D9", "#567B95", "#C59D5F"),
+        legacy5 = unlist(legacy5[1], use.names = FALSE)
+      )
+
+    if (isTRUE(show_all)) {
+      return(named_palettes)
     }
+
+    if (!is.null(palette_number) && is.null(palette)) {
+      if (!identical(palette_number, 5L) && !identical(palette_number, 5)) {
+        stop("Legacy palette_number only supports 5. Use palette = \"nature\" or another named palette instead.")
+      }
+      return(legacy5)
+    }
+
+    if (is.null(palette)) {
+      stop("Please provide palette = \"nature\" (or another named palette), or use palette_number = 5 for the legacy interface.")
+    }
+
+    palette <- match.arg(
+      palette,
+      choices = names(named_palettes)
+    )
+
+    named_palettes[[palette]]
   }
