@@ -1,16 +1,16 @@
 #' @title update_packages_tidymass_org
-#' @description Update packages in tidymass.org. Please set the path to "/Users/xiaotaoshen/tidymass" first.
+#' @description Update package files used by tidymass.org.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param path_tidymass.org path_tidymass.org
-#' @param path_packages path_packages
+#' \email{xiaotao.shen@outlook.com}
+#' @param path_tidymass.org Path to the `tidymass-packages` directory.
+#' @param path_packages Path containing package source tarballs.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom stringr str_sort str_replace_all str_extract
 #' @importFrom dplyr mutate group_by slice_tail ungroup left_join
 #' @importFrom purrr walk
 #' @importFrom readr write_csv
-#' @return Profile.
+#' @return Invisibly updates package files in `path_tidymass.org`.
 #' @export
 update_packages_tidymass_org <-
   function(path_tidymass.org = "tidymass-website/static/tidymass-packages",
@@ -239,15 +239,14 @@ generate_publication4wowchemy <-
 
 
 #' @title generate_collaborator_map
-#' @description Generate map of collaborators
+#' @description Generate a collaborator map.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param gs_user_id user google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
-#' @param map_color color of map
-#' @param point_color color of point
+#' \email{xiaotao.shen@outlook.com}
+#' @param gs_user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
+#' @param map_color Map fill color.
+#' @param point_color Point color.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom stringr str_sort str_replace_all str_extract
@@ -256,7 +255,7 @@ generate_publication4wowchemy <-
 #' @importFrom readr write_csv
 #' @importFrom tmaptools geocode_OSM
 #' @import ggplot2
-#' @return Profile.
+#' @return A `ggplot2` object.
 #' @export
 generate_collaborator_map <-
   function(gs_user_id = "3TK9yz8AAAAJ",

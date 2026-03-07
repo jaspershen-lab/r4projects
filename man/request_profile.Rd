@@ -21,5 +21,5 @@ Request a Google Scholar profile.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

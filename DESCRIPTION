@@ -1,24 +1,26 @@
 Package: r4projects
 Type: Package
-Title: R for bioinformatics project organization
+Title: Tools for Organizing Bioinformatics Projects in R
 Version: 0.1.7
 Date: 2025-07-29
-Author: c(
+Authors@R:
     person(given = "Xiaotao",
            family = "Shen",
            role = c("aut", "cre"),
-           email = "shenxt1990@outlook.com",
+           email = "xiaotao.shen@outlook.com",
            comment = c(ORCID = "0000-0002-9608-9964"))
-           )
-Maintainer: Xiaotao Shen <shenxt1990@outlook.com>
-Description: This package is used to organize and handle the projects based on R.
-URL: https://masstools.tidymass.org/
-BugReports: https://github.com/jaspershen/r4projects/issues
+Description: Utilities for organizing R-based bioinformatics projects,
+    retrieving research information from services such as Google Scholar,
+    PubMed, and GitHub, and supporting lightweight visualization and
+    academic website publishing workflows.
+URL: https://jaspershen-lab.github.io/r4projects/,
+    https://github.com/jaspershen-lab/r4projects
+BugReports: https://github.com/jaspershen-lab/r4projects/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 4.1)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports: 
     remotes,
     magrittr,
@@ -39,9 +41,9 @@ Imports:
     stringdist
 Suggests: 
     knitr,
+    pkgdown,
     rmarkdown,
     tidyverse,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
-Note:
 Config/testthat/edition: 3

@@ -4,76 +4,229 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R for bioinformatics project organization • r4projects</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="R for bioinformatics project organization">
-<meta property="og:description" content="This package is used to organize and handle the projects based on R.">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>r4projects • r4projects</title>
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="r4projects">
+<meta name="description" content="Tools for organizing bioinformatics projects in R.">
+<meta property="og:description" content="Tools for organizing bioinformatics projects in R.">
 </head>
-<body data-spy="scroll" data-target="#toc">
-    
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">r4projects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
-      </span>
-    </div>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="reference/index.html">Reference</a>
-</li>
-<li>
-  <a href="news/index.html">Changelog</a>
-</li>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="index.html">r4projects</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/jaspershen/r4projects/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/jaspershen-lab/r4projects/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="r4projects">r4projects<a class="anchor" aria-label="anchor" href="#r4projects"></a>
+</h1></div>
+<p><code>r4projects</code> is an R package for organizing bioinformatics projects and handling common research-support tasks around publication tracking, profile scraping, package metadata lookup, and lightweight visualization.</p>
+<p>The package is designed for day-to-day academic workflows rather than for a single analysis pipeline. It combines project scaffolding utilities with helper functions that pull information from Google Scholar, PubMed, GitHub, GitLab, and Gitee.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>Install the released source from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jaspershen-lab/r4projects"</span><span class="op">)</span></span></code></pre></div>
+<p>Load the package:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jaspershen-lab.github.io/r4projects/">r4projects</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<!--/.navbar -->
-
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-This package is used to organize and handle the projects based on R.
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
+<div class="section level2">
+<h2 id="what-the-package-does">What the package does<a class="anchor" aria-label="anchor" href="#what-the-package-does"></a>
+</h2>
+<p><code>r4projects</code> currently covers five practical areas.</p>
+<div class="section level3">
+<h3 id="id_1-project-organization">1. Project organization<a class="anchor" aria-label="anchor" href="#id_1-project-organization"></a>
+</h3>
+<p>The package can create a standard directory layout for an R-based bioinformatics project.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/create_project_organization.html">create_project_organization</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/get_project_wd.html">get_project_wd</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/openwd.html">openwd</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/ignore_large_files.html">ignore_large_files</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Typical folders created by <code><a href="reference/create_project_organization.html">create_project_organization()</a></code> include:</p>
+<ul>
+<li><code>1_code</code></li>
+<li><code>2_data</code></li>
+<li><code>3_data_analysis</code></li>
+<li><code>4_manuscript</code></li>
+<li><code>5_summary</code></li>
+</ul>
+<p>This is useful when you want a repeatable project structure for exploratory analysis, manuscript preparation, and summary reporting.</p>
+</div>
+<div class="section level3">
+<h3 id="id_2-google-scholar-helpers">2. Google Scholar helpers<a class="anchor" aria-label="anchor" href="#id_2-google-scholar-helpers"></a>
+</h3>
+<p>The package can cache and parse Google Scholar pages to retrieve profile and publication information.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_profile.html">request_profile</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span>
+<span><span class="va">citations</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_citation.html">request_citation</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span>
+<span><span class="va">pubs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_publications.html">request_publications</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span>
+<span><span class="va">paper</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_publication_info.html">request_publication_info</a></span><span class="op">(</span></span>
+<span>  user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span>,</span>
+<span>  pub_id <span class="op">=</span> <span class="st">"0EnyYjriUFMC"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Related functions:</p>
+<ul>
+<li><code><a href="reference/craw_or_load_page.html">craw_or_load_page()</a></code></li>
+<li><code><a href="reference/craw_or_load_publication.html">craw_or_load_publication()</a></code></li>
+<li><code><a href="reference/request_profile.html">request_profile()</a></code></li>
+<li><code><a href="reference/request_citation.html">request_citation()</a></code></li>
+<li><code><a href="reference/draw_citation_history.html">draw_citation_history()</a></code></li>
+<li><code><a href="reference/request_coauthors.html">request_coauthors()</a></code></li>
+<li><code><a href="reference/request_publications.html">request_publications()</a></code></li>
+<li><code><a href="reference/request_publication_info.html">request_publication_info()</a></code></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="id_3-pubmed-helpers">3. PubMed helpers<a class="anchor" aria-label="anchor" href="#id_3-pubmed-helpers"></a>
+</h3>
+<p>The package includes helpers for linking Google Scholar entries to PubMed and extracting PubMed metadata.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pmid</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/convert_gs_pub_id2pmid.html">convert_gs_pub_id2pmid</a></span><span class="op">(</span></span>
+<span>  gs_user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span>,</span>
+<span>  gs_pub_id <span class="op">=</span> <span class="st">"0EnyYjriUFMC"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pubmed_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_pubmed_publication_info.html">request_pubmed_publication_info</a></span><span class="op">(</span>pmid <span class="op">=</span> <span class="va">pmid</span><span class="op">)</span></span></code></pre></div>
+<p>These functions are useful when you want to recover author affiliations, identifiers, abstracts, or other structured paper metadata.</p>
+</div>
+<div class="section level3">
+<h3 id="id_4-github-and-package-metadata-helpers">4. GitHub and package metadata helpers<a class="anchor" aria-label="anchor" href="#id_4-github-and-package-metadata-helpers"></a>
+</h3>
+<p>The package can collect simple GitHub profile information and package metadata from repository hosting platforms.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gh_profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/require_github_profile.html">require_github_profile</a></span><span class="op">(</span><span class="st">"jaspershen"</span><span class="op">)</span></span>
+<span><span class="va">gh_activity</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/require_github_contribution_activity.html">require_github_contribution_activity</a></span><span class="op">(</span><span class="st">"jaspershen"</span><span class="op">)</span></span>
+<span><span class="va">pkg_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/require_package_info.html">require_package_info</a></span><span class="op">(</span><span class="st">"jaspershen/laggedcor"</span>, from <span class="op">=</span> <span class="st">"github"</span><span class="op">)</span></span></code></pre></div>
+<p>There is also a convenience installer for packages hosted on GitHub, GitLab, or Gitee:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/install_fastgit.html">install_fastgit</a></span><span class="op">(</span><span class="st">"jaspershen/laggedcor"</span>, from <span class="op">=</span> <span class="st">"github"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="id_5-visualization-and-academic-website-support">5. Visualization and academic website support<a class="anchor" aria-label="anchor" href="#id_5-visualization-and-academic-website-support"></a>
+</h3>
+<p>The package includes plotting helpers and functions used in personal or lab website workflows.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/draw_citation_history.html">draw_citation_history</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/generate_collaborator_map.html">generate_collaborator_map</a></span><span class="op">(</span>gs_user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span></code></pre></div>
+<p>Additional helpers include:</p>
+<ul>
+<li><code><a href="reference/color_palette.html">color_palette()</a></code></li>
+<li><code><a href="reference/theme_shenlab.html">theme_shenlab()</a></code></li>
+<li><code><a href="reference/update_packages_tidymass_org.html">update_packages_tidymass_org()</a></code></li>
+</ul>
+</div>
+</div>
+<div class="section level2">
+<h2 id="example-workflow">Example workflow<a class="anchor" aria-label="anchor" href="#example-workflow"></a>
+</h2>
+<p>A minimal workflow for a new analysis project might look like this:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jaspershen-lab.github.io/r4projects/">r4projects</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/create_project_organization.html">create_project_organization</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">setwd</a></span><span class="op">(</span><span class="fu"><a href="reference/get_project_wd.html">get_project_wd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pubs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_publications.html">request_publications</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span>
+<span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/draw_citation_history.html">draw_citation_history</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="st">"3TK9yz8AAAAJ"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="exported-functions">Exported functions<a class="anchor" aria-label="anchor" href="#exported-functions"></a>
+</h2>
+<p>Main exported functions in the package:</p>
+<ul>
+<li><code><a href="reference/color_palette.html">color_palette()</a></code></li>
+<li><code><a href="reference/convert_gs_pub_id2pmid.html">convert_gs_pub_id2pmid()</a></code></li>
+<li><code><a href="reference/craw_or_load_page.html">craw_or_load_page()</a></code></li>
+<li><code><a href="reference/craw_or_load_publication.html">craw_or_load_publication()</a></code></li>
+<li><code><a href="reference/create_project_organization.html">create_project_organization()</a></code></li>
+<li><code><a href="reference/draw_citation_history.html">draw_citation_history()</a></code></li>
+<li><code><a href="reference/fuzzy_match.html">fuzzy_match()</a></code></li>
+<li><code><a href="reference/generate_collaborator_map.html">generate_collaborator_map()</a></code></li>
+<li><code><a href="reference/get_os.html">get_os()</a></code></li>
+<li><code><a href="reference/get_project_wd.html">get_project_wd()</a></code></li>
+<li><code><a href="reference/ignore_large_files.html">ignore_large_files()</a></code></li>
+<li><code><a href="reference/install_fastgit.html">install_fastgit()</a></code></li>
+<li><code><a href="reference/openwd.html">openwd()</a></code></li>
+<li><code><a href="reference/r4projects_logo.html">r4projects_logo()</a></code></li>
+<li><code><a href="reference/r4projects_packages.html">r4projects_packages()</a></code></li>
+<li><code><a href="reference/request_citation.html">request_citation()</a></code></li>
+<li><code><a href="reference/request_coauthors.html">request_coauthors()</a></code></li>
+<li><code><a href="reference/request_profile.html">request_profile()</a></code></li>
+<li><code><a href="reference/request_publication_info.html">request_publication_info()</a></code></li>
+<li><code><a href="reference/request_publications.html">request_publications()</a></code></li>
+<li><code><a href="reference/request_pubmed_publication_info.html">request_pubmed_publication_info()</a></code></li>
+<li><code><a href="reference/require_github_contribution_activity.html">require_github_contribution_activity()</a></code></li>
+<li><code><a href="reference/require_github_profile.html">require_github_profile()</a></code></li>
+<li><code><a href="reference/require_package_info.html">require_package_info()</a></code></li>
+<li><code><a href="reference/show_progresser.html">show_progresser()</a></code></li>
+<li><code><a href="reference/theme_shenlab.html">theme_shenlab()</a></code></li>
+<li><code><a href="reference/update_packages_tidymass_org.html">update_packages_tidymass_org()</a></code></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="notes">Notes<a class="anchor" aria-label="anchor" href="#notes"></a>
+</h2>
+<ul>
+<li>Several functions rely on live web pages and may break if upstream page structures change.</li>
+<li>Google Scholar scraping should be used conservatively because aggressive requests may be throttled.</li>
+<li>Some functions are tailored to the author’s existing workflow and may be most useful as lightweight utilities rather than general APIs.</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="documentation-website">Documentation website<a class="anchor" aria-label="anchor" href="#documentation-website"></a>
+</h2>
+<p>The pkgdown site for the package is intended to be published at:</p>
+<p><a href="https://jaspershen-lab.github.io/r4projects/">https://jaspershen-lab.github.io/r4projects/</a></p>
+<p>To rebuild the site locally:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a>
+</h2>
+<p>Xiaotao Shen<br>
+Email: <a href="mailto:xiaotao.shen@outlook.com">xiaotao.shen@outlook.com</a></p>
+</div>
+</div>
+  </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/jaspershen/r4projects/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/jaspershen/r4projects/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/jaspershen-lab/r4projects/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/jaspershen-lab/r4projects/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/jaspershen-lab/r4projects" class="external-link">Source code</a></li>
+<li><a href="https://github.com/jaspershen-lab/r4projects/issues" class="external-link">Issue tracker</a></li>
 </ul>
 </div>
 
@@ -96,33 +249,30 @@ This package is used to organize and handle the projects based on R.
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Xiaotao Shen <br><small class="roles"> Maintainer </small>  </li>
+<li>Xiaotao Shen <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9608-9964" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
 
 
-  </div>
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by Xiaotao Shen.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by Xiaotao Shen.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
-  
 
 
-  
+
 
   </body>
 </html>

@@ -1,9 +1,9 @@
 
-#' List all packages in the r4projects
+#' List Packages Used by r4projects
 #'
-#' @param include_self Include r4projects in the list?
+#' @param include_self Include `r4projects` in the list?
 #' @export
-#' @return r4projects packages
+#' @return A character vector of package names.
 #' @examples
 #' r4projects_packages()
 r4projects_packages <- function(include_self = TRUE) {
@@ -53,12 +53,12 @@ style_grey <- function(level, ...) {
 
 
 #' @title show_progresser
-#' @description show_progresser
+#' @description Create a simple progress lookup table.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param index index for loop
-#' @param progresser progresser
-#' @return A data.frame
+#' \email{xiaotao.shen@outlook.com}
+#' @param index A numeric index vector.
+#' @param progresser Progress labels to map onto `index`.
+#' @return A data frame.
 #' @importFrom magrittr %>%
 #' @importFrom crayon green
 #' @export
@@ -80,12 +80,12 @@ show_progresser <-
 
 
 #' @title install_fastgit
-#' @description install packages from fastgit. Credit to Shixiang Wang
+#' @description Install packages from FastGit. Credit to Shixiang Wang.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param pkg pkg name from github, gitlab or gitee, "name/repo" format
-#' @param from gitlab, github or gitee.
-#' @param ... Other parameters for install_git
+#' \email{xiaotao.shen@outlook.com}
+#' @param pkg Package name from GitHub, GitLab, or Gitee in `"name/repo"` format.
+#' @param from One of `"gitee"`, `"gitlab"`, or `"github"`.
+#' @param ... Other parameters passed to `remotes::install_git()`.
 #' @return NULL
 #' @export
 

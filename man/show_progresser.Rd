@@ -22,5 +22,5 @@ Create a simple progress lookup table.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

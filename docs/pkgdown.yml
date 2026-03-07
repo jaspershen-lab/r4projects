@@ -1,6 +1,8 @@
-pandoc: 3.1.1
-pkgdown: 2.0.7
+pandoc: '3.9'
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-09-03T07:04Z
-
+last_built: 2026-03-07T06:43Z
+urls:
+  reference: https://jaspershen-lab.github.io/r4projects/reference
+  article: https://jaspershen-lab.github.io/r4projects/articles

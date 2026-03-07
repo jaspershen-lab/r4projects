@@ -14,5 +14,5 @@ Create a standard project directory structure.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

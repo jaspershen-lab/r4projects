@@ -1,7 +1,7 @@
 #' @title r4projects_logo
 #' @description Get the detailed of metPath package.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
+#' \email{xiaotao.shen@outlook.com}
 #' @importFrom utils packageDescription head tail download.file
 #' @importFrom cli rule symbol
 #' @importFrom crayon green blue col_align

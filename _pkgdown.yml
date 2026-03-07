@@ -1,0 +1,52 @@
+url: https://jaspershen-lab.github.io/r4projects/
+
+template:
+  bootstrap: 5
+
+home:
+  title: r4projects
+  description: Tools for organizing bioinformatics projects in R.
+  links:
+  - text: Source code
+    href: https://github.com/jaspershen-lab/r4projects
+  - text: Issue tracker
+    href: https://github.com/jaspershen-lab/r4projects/issues
+
+reference:
+  - title: Project organization
+    contents:
+      - create_project_organization
+      - get_project_wd
+      - openwd
+      - ignore_large_files
+      - get_os
+  - title: Google Scholar
+    contents:
+      - craw_or_load_page
+      - craw_or_load_publication
+      - request_profile
+      - request_citation
+      - draw_citation_history
+      - request_coauthors
+      - request_publications
+      - request_publication_info
+  - title: PubMed
+    contents:
+      - convert_gs_pub_id2pmid
+      - request_pubmed_publication_info
+  - title: Repository and package metadata
+    contents:
+      - require_github_contribution_activity
+      - require_github_profile
+      - require_package_info
+      - install_fastgit
+      - update_packages_tidymass_org
+  - title: Visualization and utilities
+    contents:
+      - generate_collaborator_map
+      - color_palette
+      - theme_shenlab
+      - fuzzy_match
+      - r4projects_logo
+      - r4projects_packages
+      - show_progresser

@@ -17,5 +17,5 @@ Request publication information from PubMed.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

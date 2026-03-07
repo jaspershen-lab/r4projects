@@ -1,14 +1,14 @@
 #' @title require_github_contribution_activity
-#' @description Request the contribution activity of github
+#' @description Request GitHub contribution activity.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_name GitHub user name
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_name GitHub user name.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes
 #' @importFrom tibble as_tibble
 #' @importFrom xml2 read_html write_html
-#' @return Profile.
+#' @return A list containing contribution data and a plot.
 #' @export
 
 require_github_contribution_activity <-
@@ -171,16 +171,16 @@ require_github_contribution_activity <-
   }
 
 #' @title require_github_profile
-#' @description Request the profile of GitHub.
+#' @description Request a GitHub profile.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_name GitHub user name
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_name GitHub user name.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes
 #' @importFrom tibble as_tibble
 #' @importFrom xml2 read_html write_html
-#' @return Profile.
+#' @return A list containing profile information.
 #' @export
 
 require_github_profile <-
@@ -250,9 +250,9 @@ require_github_profile <-
 #' @title require_package_info
 #' @description Request R package information from GitHub, GitLab or Gitee.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param repo_name R package repo name, default is "jaspershen/laggedcor"
-#' @param from github, gitlab or gitee.
+#' \email{xiaotao.shen@outlook.com}
+#' @param repo_name R package repository name. Defaults to `"jaspershen/laggedcor"`.
+#' @param from One of `"github"`, `"gitlab"`, or `"gitee"`.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes

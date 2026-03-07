@@ -1,10 +1,10 @@
 ## -----------------------------------------------------------------------
 #' @title get_os
-#' @description get os information.
+#' @description Get operating system information.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
+#' \email{xiaotao.shen@outlook.com}
 #' @export
-#' @return os name
+#' @return OS name.
 #' @examples
 #' get_os()
 get_os <- function() {
@@ -30,11 +30,11 @@ get_os <- function() {
 
 ## -----------------------------------------------------------------------
 #' @title create_project_organization
-#' @description Create project organization.
+#' @description Create a standard project directory structure.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
+#' \email{xiaotao.shen@outlook.com}
 #' @export
-#' @return some folders
+#' @return Creates a standard set of project folders and template files.
 create_project_organization <-
   function() {
     current_wd <-

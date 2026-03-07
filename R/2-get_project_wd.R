@@ -1,12 +1,12 @@
 #' @title get_project_wd
-#' @description Get the working directory where Rproj object is in.
+#' @description Get the project working directory containing the `.Rproj` file.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
+#' \email{xiaotao.shen@outlook.com}
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_split
 #' @importFrom utils head
 #' @importFrom utils tail
-#' @return A working directory.
+#' @return A project working directory path.
 #' @export
 
 get_project_wd <-
@@ -56,6 +56,6 @@ get_project_wd <-
       }
     }
     if (length(project_index) == 0) {
-      message("There are no .Rproj in your file. No change for wd.")
-    }
+      message("No .Rproj file was found in the current path. Working directory unchanged.")
+  }
   }

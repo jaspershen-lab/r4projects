@@ -1,10 +1,10 @@
 #' @title install_fastgit
-#' @description install packages from fastgit. Credit to Shixiang Wang
+#' @description Install packages from FastGit. Credit to Shixiang Wang.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param pkg pkg name from github, gitlab or gitee, "name/repo" format
-#' @param from gitlab, github or gitee.
-#' @param ... Other parameters for install_git
+#' \email{xiaotao.shen@outlook.com}
+#' @param pkg Package name from GitHub, GitLab, or Gitee in `"name/repo"` format.
+#' @param from One of `"gitee"`, `"gitlab"`, or `"github"`.
+#' @param ... Other parameters passed to `remotes::install_git()`.
 #' @importFrom remotes install_git
 #' @return NULL
 #' @export

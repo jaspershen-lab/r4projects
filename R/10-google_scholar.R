@@ -1,17 +1,16 @@
 #' @title craw_or_load_page
-#' @description Craw or load webpage data.
+#' @description Crawl or load webpage data.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes
 #' @importFrom tibble as_tibble
 #' @importFrom xml2 read_html write_html
-#' @return page data
+#' @return Parsed page data.
 #' @export
 
 craw_or_load_page <-
@@ -54,11 +53,11 @@ craw_or_load_page <-
       if (any(dir(user_path) == "page_data.html")) {
         page_data <-
           xml2::read_html(paste0(user_path, "/page_data.html"))
-        message("Previouse webpage data is in ", user_path)
+        message("Previous webpage data are available in ", user_path)
         message(
-          "Use previouse webpage data less than ",
+          "Using cached webpage data newer than ",
           interval,
-          " days, if you want to use latest data, set force as TRUE"
+          " days. Set force = TRUE to fetch the latest data."
         )
       } else{
         Sys.sleep(time = 3)
@@ -72,20 +71,19 @@ craw_or_load_page <-
 
 
 #' @title craw_or_load_publication
-#' @description Craw or load webpage data of one publication.
+#' @description Crawl or load webpage data for a single publication.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param pub_id publication ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param pub_id Publication ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes
 #' @importFrom tibble as_tibble
 #' @importFrom xml2 read_html write_html
-#' @return page data
+#' @return Parsed publication page data.
 #' @export
 
 craw_or_load_publication <-
@@ -135,11 +133,11 @@ craw_or_load_publication <-
       if (any(dir(pub_path) == "pub_data.html")) {
         pub_data <-
           xml2::read_html(paste0(pub_path, "/pub_data.html"))
-        message("Previouse webpage data is in ", user_path)
+        message("Previous webpage data are available in ", user_path)
         message(
-          "Use previouse webpage data less than ",
+          "Using cached webpage data newer than ",
           interval,
-          " days, if you want to use latest data, set force as TRUE"
+          " days. Set force = TRUE to fetch the latest data."
         )
       } else{
         Sys.sleep(time = 3)
@@ -154,19 +152,18 @@ craw_or_load_publication <-
 
 
 #' @title request_profile
-#' @description Request the profile.
+#' @description Request a Google Scholar profile.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table html_nodes
 #' @importFrom tibble as_tibble
 #' @importFrom xml2 read_html write_html
-#' @return Profile.
+#' @return A list containing profile information.
 #' @export
 
 request_profile <-
@@ -231,15 +228,14 @@ request_profile <-
 #' @title request_citation
 #' @description Request citation information.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom rvest read_html html_node html_text html_text2 html_elements
 #' @importFrom rvest html_element html_attr html_table
-#' @return Profile.
+#' @return Citation summary data.
 #' @export
 request_citation <-
   function(user_id = "3TK9yz8AAAAJ",
@@ -287,14 +283,13 @@ request_citation <-
 #' @title draw_citation_history
 #' @description Draw citation history plot.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom ggplot2 ggplot aes geom_bar theme_bw labs
-#' @return Profile.
+#' @return A citation history plot.
 #' @export
 
 draw_citation_history <-
@@ -342,14 +337,13 @@ draw_citation_history <-
 #' @title request_coauthors
 #' @description Request coauthor information
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract str_replace str_detect
-#' @return Information of coauthors
+#' @return Coauthor information.
 #' @export
 request_coauthors <-
   function(user_id = "3TK9yz8AAAAJ",
@@ -408,15 +402,14 @@ request_coauthors <-
 #' @title request_publications
 #' @description Request all publications
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract str_replace str_detect
 #' @importFrom purrr map
-#' @return Information of publications
+#' @return Publication information.
 #' @export
 
 request_publications <-
@@ -556,18 +549,17 @@ request_publications <-
 
 
 #' @title request_publication_info
-#' @description Request one publication info
+#' @description Request information for a single publication.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param user_id User google scholar ID
-#' @param pub_id Publication google scholar ID
-#' @param force Force read webpage?
-#' @param interval If there is old data on the local machine,
-#' do you want to use it and the interval (day)?
+#' \email{xiaotao.shen@outlook.com}
+#' @param user_id Google Scholar user ID.
+#' @param pub_id Google Scholar publication ID.
+#' @param force Force a fresh webpage request?
+#' @param interval Cache validity interval in days when local data already exist.
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract str_replace str_detect
 #' @importFrom purrr map
-#' @return Information of publications
+#' @return Publication information.
 #' @export
 
 request_publication_info <-

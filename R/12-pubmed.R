@@ -7,7 +7,7 @@
 #' @param gs_user_id Character string specifying the Google Scholar user ID. Default is "3TK9yz8AAAAJ".
 #' @param gs_pub_id Character string specifying the Google Scholar publication ID. Default is "0EnyYjriUFMC".
 #' @param force Logical. Whether to force the request for publication info. Default is FALSE.
-#' @param interval Numeric. Time interval in seconds to wait between requests. Default is 7.
+#' @param interval Numeric. Cache validity interval in days. Default is 7.
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract str_replace str_detect str_split
 #' @importFrom purrr map
@@ -56,14 +56,14 @@ convert_gs_pub_id2pmid <-
 
 
 #' @title request_pubmed_publication_info
-#' @description Request publication information from pubmed
+#' @description Request publication information from PubMed.
 #' @author Xiaotao Shen
-#' \email{shenxt1990@@outlook.com}
-#' @param pmid pmid of paper
+#' \email{xiaotao.shen@outlook.com}
+#' @param pmid PubMed ID of the paper.
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract str_replace str_detect str_split
 #' @importFrom purrr map
-#' @return Information of publication
+#' @return A list of publication information.
 #' @export
 
 request_pubmed_publication_info <-

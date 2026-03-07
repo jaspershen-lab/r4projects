@@ -14,5 +14,5 @@ Get the project working directory containing the `.Rproj` file.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

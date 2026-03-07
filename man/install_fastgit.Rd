@@ -22,5 +22,5 @@ Install packages from FastGit. Credit to Shixiang Wang.
 }
 \author{
 Xiaotao Shen
-\email{shenxt1990@outlook.com}
+\email{xiaotao.shen@outlook.com}
 }

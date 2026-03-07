@@ -1,66 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_project_organization.html</loc>
-  </url>
-  <url>
-    <loc>/reference/draw_citation_history.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_os.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_project_wd.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hello.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/install_fastgit.html</loc>
-  </url>
-  <url>
-    <loc>/reference/openwd.html</loc>
-  </url>
-  <url>
-    <loc>/reference/r4projects_logo.html</loc>
-  </url>
-  <url>
-    <loc>/reference/r4projects_packages.html</loc>
-  </url>
-  <url>
-    <loc>/reference/request_citation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/request_coauthors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/request_profile.html</loc>
-  </url>
-  <url>
-    <loc>/reference/request_publications.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_progresser.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://jaspershen-lab.github.io/r4projects/404.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/LICENSE-text.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/LICENSE.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/authors.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/index.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/news/index.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/color_palette.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/convert_gs_pub_id2pmid.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/craw_or_load_page.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/craw_or_load_publication.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/create_project_organization.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/draw_citation_history.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/fuzzy_match.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/generate_collaborator_map.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/get_os.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/get_project_wd.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/ignore_large_files.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/index.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/install_fastgit.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/openwd.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/r4projects_logo.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/r4projects_packages.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_citation.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_coauthors.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_profile.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_publication_info.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_publications.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/request_pubmed_publication_info.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/require_github_contribution_activity.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/require_github_profile.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/require_package_info.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/show_progresser.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/theme_shenlab.html</loc></url>
+<url><loc>https://jaspershen-lab.github.io/r4projects/reference/update_packages_tidymass_org.html</loc></url>
 </urlset>
+
